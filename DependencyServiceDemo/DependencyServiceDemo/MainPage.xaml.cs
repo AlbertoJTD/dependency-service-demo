@@ -23,5 +23,11 @@ namespace DependencyServiceDemo
 
 			await DisplayAlert("Service message", message, "Ok");
 		}
+
+		private void TextToSpeech(object sender, EventArgs e)
+		{
+			var service = DependencyService.Get<ITextToSpeech>();
+			service.Speak("Hello world");
+		}
 	}
 }

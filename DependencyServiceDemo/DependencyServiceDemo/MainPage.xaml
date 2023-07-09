@@ -7,6 +7,9 @@
         <Button HeightRequest="100"
                 Text="Display message"
                 Clicked="Button_Clicked"/>
+
+        <Button Text="Text to speech"
+                Clicked="TextToSpeech"/>
     </StackLayout>
 
 </ContentPage>
