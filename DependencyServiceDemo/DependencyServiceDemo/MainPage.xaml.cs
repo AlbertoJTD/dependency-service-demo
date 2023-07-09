@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DependencyServiceDemo.DependecyServices;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -13,6 +14,14 @@ namespace DependencyServiceDemo
 		public MainPage()
 		{
 			InitializeComponent();
+		}
+
+		private async void Button_Clicked(object sender, EventArgs e)
+		{
+			var service = DependencyService.Get<IPlatformMessage>();
+			var message = service.GetMessage();
+
+			await DisplayAlert("Service message", message, "Ok");
 		}
 	}
 }
